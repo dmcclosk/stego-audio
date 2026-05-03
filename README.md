@@ -28,8 +28,7 @@ stego-audio/
 │   ├── host_audio/      # Original audio
 │   ├── stego_samples/   # Pre-encoded examples
 │   └── stego_output/    # Generated output
-├── README.md
-└── AGENTS.md
+└── README.md
 ```
 
 ## Core Functions (src/)
