@@ -1,6 +1,14 @@
 function run_demo(host_file, secret_msg, num_lsbs, output_file, output_fig)
-    scriptDir = fileparts(mfilename('fullpath'));
-    projectDir = fileparts(scriptDir);
+    if isempty(which('run_demo'))
+        projectDir = pwd;
+    else
+        scriptDir = fileparts(which('run_demo'));
+        if exist(fullfile(scriptDir, 'src'), 'dir')
+            projectDir = scriptDir;
+        else
+            projectDir = fileparts(scriptDir);
+        end
+    end
     addpath(fullfile(projectDir, 'src'));
 
     fprintf('=== Audio Steganography Headless Demo ===\n\n');
@@ -73,8 +81,7 @@ function run_demo(host_file, secret_msg, num_lsbs, output_file, output_fig)
             end
         end
     end
-    fprintf('   Debug: samples used=%d, lsbValues extracted=%d\n', num_samples_used, length(lsbValues));
-    fprintf('   Debug: first 16 bits: %s\n', num2str(lsbValues(1:min(16,end))));
+
 
     recovered = '';
     for i = 1:8:length(lsbValues)

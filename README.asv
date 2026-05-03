@@ -20,7 +20,9 @@ Then open Live Scripts in `notebooks/`
 ```
 stego-audio/
 ├── src/                  # Core LSB encoding/decoding functions
-├── scripts/              # Shell scripts and one time ulitities
+├── demos/                # Demo scripts
+├── scripts/              # Shell scripts and one time ul
+├── utils/                # Utilities (record_host_audio.m)
 ├── notebooks/            # MATLAB Live Scripts (.mlx)
 ├── Media/                # Audio files
 │   ├── host_audio/      # Original audio
